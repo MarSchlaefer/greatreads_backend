@@ -5,19 +5,21 @@ Rails.application.routes.draw do
       resources :users
         post '/login', to: 'auth#create'
         get '/profile', to: 'users#profile'
-    end
-  end
-
-  namespace :api do
-    namespace :v1 do
       resources :books
-    end
-  end
-
-  namespace :api do
-    namespace :v1 do
       resources :follows
     end
   end
+
+  # namespace :api do
+  #   namespace :v1 do
+  #     resources :books
+  #   end
+  # end
+  #
+  # namespace :api do
+  #   namespace :v1 do
+  #     resources :follows
+  #   end
+  # end
 
 end

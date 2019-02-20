@@ -1,9 +1,11 @@
 class Api::V1::BooksController < ApplicationController
+  skip_before_action :authorized
 
   before_action :find_book, only: [:show, :edit, :update, :destroy]
 
   def index
     @books = Book.all
+    render json: @books
   end
 
   def show
