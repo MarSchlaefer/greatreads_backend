@@ -192,7 +192,7 @@ puts "starting users"
 
 Mar = User.create("username" => "MarMarBinks", "bio" => "I like dogs and baking.", "avatar" => "", "password_digest" => "#{User.digest('mar')}")
 Charlie = User.create("username" => "CharBar1", "bio" => "I'm a garbage human.", "avatar" => "", "password_digest" => "#{User.digest('charlie')}")
-May = User.create("username" => "MayBay1", "bio" => "I like to laugh without smiling.", "avatar" => "", "password_digest" => "#{User.digest('may')}") 
+May = User.create("username" => "MayBay1", "bio" => "I like to laugh without smiling.", "avatar" => "", "password_digest" => "#{User.digest('may')}")
 Chris = User.create("username" => "ChrisBliss1", "bio" => "I like cars.", "avatar" => "", "password_digest" => "#{User.digest('chris')}")
 
 puts "users seeded"
