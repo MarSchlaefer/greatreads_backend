@@ -53,3 +53,5 @@ gem "faker", "~> 1.9"
 gem "rest-client"
 
 gem "figaro"
+
+gem 'rb-readline'

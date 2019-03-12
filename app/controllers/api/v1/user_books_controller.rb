@@ -1,4 +1,4 @@
-class UserUserBookController < ApplicationController
+class Api::V1::UserBooksController < ApplicationController
   skip_before_action :authorized
 
   before_action :find_book, only: [:show, :edit, :update, :destroy]
