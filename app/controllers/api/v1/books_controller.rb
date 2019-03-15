@@ -9,6 +9,7 @@ class Api::V1::BooksController < ApplicationController
   end
 
   def show
+    render json: @book
     #done in the before action.
   end
 
@@ -19,10 +20,10 @@ class Api::V1::BooksController < ApplicationController
   def create
     @book = Book.create(book_params)
     if @book.valid?
-      redirect_to @book
+      render json: @book
     else
       flash[:error] = @book.errors.full_messages
-      redirect_to new_book_path
+      render json: { error: 'failed to create book' }, status: :not_acceptable
     end
   end
 
@@ -33,10 +34,10 @@ class Api::V1::BooksController < ApplicationController
   def update
     @book.update(book_params)
     if @book.valid?
-      redirect_to @book
+      render json: @book
     else
       flash[:error] = @book.errors.full_messages
-      redirect_to edit_book_path
+      render json: { error: 'failed to edit book' }, status: :not_acceptable
     end
   end
 
