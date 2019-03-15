@@ -20,7 +20,7 @@ class Api::V1::UserBooksController < ApplicationController
   def create
     @user_book = UserBook.create(user_book_params)
     if @user_book.valid?
-      redirect_to @user_book
+      render json: @user_book
     else
       flash[:error] = @user_book.errors.full_messages
       render json: { error: 'failed to create user_book' }, status: :not_acceptable
