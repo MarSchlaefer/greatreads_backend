@@ -22,8 +22,8 @@ class Api::V1::UserBooksController < ApplicationController
     if @user_book.valid?
       render json: @user_book
     else
-      flash[:error] = @user_book.errors.full_messages
-      render json: { error: 'failed to create user_book' }, status: :not_acceptable
+      # flash[:error] = @user_book.errors.full_messages
+      render json: { error: @user_book.errors.full_messages }, status: :not_acceptable
     end
   end
 
@@ -37,8 +37,8 @@ class Api::V1::UserBooksController < ApplicationController
       # redirect_to @user_book
       render json: @user_book
     else
-      flash[:error] = @user_book.errors.full_messages
-      render json: { error: 'failed to edit user_book' }, status: :not_acceptable
+      # flash[:error] = @user_book.errors.full_messages
+      render json: { error: @user_book.errors.full_messages }, status: :not_acceptable
     end
   end
 
